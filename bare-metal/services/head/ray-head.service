@@ -2,10 +2,13 @@
 Description=Ray service on head node
 
 [Service]
+Environment="RAY_GRAFANA_HOST=http://localhost:3000"
+Environment="RAY_PROMETHEUS_HOST=http://localhost:9090"
+Environment="RAY_PROMETHEUS_NAME=prometheus"
 Type=simple
 Restart=always
 RestartSec=10
-ExecStart=%h/.miniconda/bin/conda run -n ray ray start --head --block --dashboard-host='0.0.0.0'
+ExecStart=%h/.miniconda/bin/conda run -n ray ray start --head --block --dashboard-host='0.0.0.0' --metrics-export-port=8080
 
 [Install]
 WantedBy=default.target
