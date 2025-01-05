@@ -1,0 +1,11 @@
+[Unit]
+Description=SSH tunnel to gpu4
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=10
+ExecStart=/usr/bin/ssh -N -R 6379:localhost:6379 gpu4
+
+[Install]
+WantedBy=default.target

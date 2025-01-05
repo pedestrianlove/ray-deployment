@@ -1,0 +1,11 @@
+[Unit]
+Description=SSH tunnel to gpu2
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=10
+ExecStart=/usr/bin/ssh -N -R 6379:localhost:6379 gpu2
+
+[Install]
+WantedBy=default.target

@@ -1,0 +1,11 @@
+[Unit]
+Description=SSH tunnel to gpu3
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=10
+ExecStart=/usr/bin/ssh -N -R 6379:localhost:6379 gpu3
+
+[Install]
+WantedBy=default.target
