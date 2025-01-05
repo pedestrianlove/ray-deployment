@@ -1,0 +1,11 @@
+[Unit]
+Description=Ray service on worker node
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=10
+ExecStart=%h/.miniconda/bin/conda run -n ray ray start --address='0.0.0.0:6379' --block
+
+[Install]
+WantedBy=default.target
