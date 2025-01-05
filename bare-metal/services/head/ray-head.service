@@ -5,6 +5,7 @@ Description=Ray service on head node
 Environment="RAY_GRAFANA_HOST=http://localhost:3000"
 Environment="RAY_PROMETHEUS_HOST=http://localhost:9090"
 Environment="RAY_PROMETHEUS_NAME=prometheus"
+Environment="RAY_GRAFANA_IFRAME_HOST=http://labtr:3000"
 Type=simple
 Restart=always
 RestartSec=10
