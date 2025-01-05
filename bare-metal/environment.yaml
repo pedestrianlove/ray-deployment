@@ -1,0 +1,12 @@
+name: ray
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.9
+  - "ray-default"
+  - "ray-data"
+  - "ray-train"
+  - "ray-tune"
+  - "ray-serve"
+  - "ray-rllib"
